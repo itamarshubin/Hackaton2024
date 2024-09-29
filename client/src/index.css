@@ -1,0 +1,10 @@
+* {
+  font-family: "DM Sans" !important;
+  margin: 0;
+  padding: 0;
+  color: rgba(255, 255, 255, 0.793);
+}
+html body {
+  padding-top: 65px;
+  background-color: #191a19;
+}
