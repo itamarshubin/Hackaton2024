@@ -1,27 +1,14 @@
-import { Box, Typography } from "@mui/material";
-import "./index.css";
+import { Box, Typography } from '@mui/material';
+import './index.css';
 const NotFound = () => {
   return (
-    <Box
-      display="flex"
-      alignItems="center"
-      flexDirection="column"
-      className="wrapper"
-      width="100vw"
-      height="100vhr"
-    >
-      <div style={{ width: "60%" }}>
+    <Box display="flex" alignItems="center" flexDirection="column" className="wrapper" width="100vw" height="100vhr">
+      <div style={{ width: '60%' }}>
         <div>
           <div className="container">
             <div className="row">
               <div className="col-sm-12 col-md-12 mt-5 mb-5">
-                <svg
-                  width="100%"
-                  height="100%"
-                  viewBox="0 0 636 324"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
+                <svg width="100%" height="100%" viewBox="0 0 636 324" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g id="OBJECTS">
                     <g id="Group">
                       <path

@@ -1,55 +1,46 @@
-import { useEffect, useState } from "react";
-import {
-  BrowserRouter,
-  Navigate,
-  Outlet,
-  Route,
-  Routes,
-} from "react-router-dom";
-import Header from "./pages/components/header";
-import Home from "./pages/home";
-import Mail from "./pages/mail";
-import NotFound from "./pages/notFound";
-import Login from "./pages/login";
+import { ThemeProvider } from '@emotion/react';
+import { createTheme } from '@mui/material';
+import { BrowserRouter, Outlet, Route, Routes } from 'react-router-dom';
+import { AiQuestions } from './pages/ai/AiQuestions';
+import Header from './pages/components/header';
+import Home from './pages/home';
+import Login from './pages/login';
+import Mail from './pages/mail';
+import NotFound from './pages/notFound';
 
-const useNiggaAuth = () => {
-  const [isLoading, setIsLoading] = useState(true);
-  const [data, setData] = useState(null);
-
-  useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-      setData("nigger");
-    }, 2000);
-  }, []);
-
-  return [isLoading, data];
-};
+const theme = createTheme({
+  palette: {
+    mode: 'dark',
+  },
+});
 
 export default function App() {
   return (
-    <BrowserRouter>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/cyber" element={<>cyber</>} />
-        <Route element={<ProtectedRoute />}>
-          <Route path="/mail" element={<Mail />} />
-        </Route>
-        <Route path="/login" element={<Login />} />
-        <Route path="/*" element={<NotFound />} />
-      </Routes>
-    </BrowserRouter>
+    <ThemeProvider theme={theme}>
+      <BrowserRouter>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/cyber" element={<>cyber</>} />
+          <Route path="/ai" element={<AiQuestions />} />
+          <Route element={<ProtectedRoute />}>
+            <Route path="/mail" element={<Mail />} />
+          </Route>
+          <Route path="/login" element={<Login />} />
+          <Route path="/*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 
 const ProtectedRoute = () => {
-  const [isLoading, authData] = useNiggaAuth();
+  // const [isLoading,authData ] = useAuth();
 
-  if (isLoading) return <>Loading</>;
+  // if (isLoading) return <>Loading</>;
 
-  if (!authData) return <Navigate to="/login" />;
+  // if (!authData) return <Navigate to="/login" />;
 
   return <Outlet />;
 };
