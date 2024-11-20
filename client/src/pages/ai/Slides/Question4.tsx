@@ -2,9 +2,12 @@ import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
 import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
-// import zip from "../../../assets/q4/files.zip";
 
 export const Question4: FC = () => {
+  const codePyHref = new URL('../../../assets/q4/code.py', import.meta.url).href;
+  const codeIpynbHref = new URL('../../../assets/q4/code.ipynb', import.meta.url).href;
+  const dataCsvHref = new URL('../../../assets/q4/data.csv', import.meta.url).href;
+
   return (
     <Box
       display="flex"
@@ -35,13 +38,13 @@ export const Question4: FC = () => {
         <QuestionTypography mt="5rem" color="info">
           בחידה זו תוכלו להיעזר בקובץ הקוד המצורף או בגרסת המחברת שלו – לנוחיותכם.
         </QuestionTypography>
-        <a href={`${window.location.origin}/src/assets/q4/code.py`} download="code.py">
+        <a href={codePyHref} download="code.py">
           code.py
         </a>
-        <a href={`${window.location.origin}/src/assets/q4/code.ipynb`} download="code.ipynb">
+        <a href={codeIpynbHref} download="code.ipynb">
           code.ipynb
         </a>
-        <a href={`${window.location.origin}/src/assets/q4/data.csv`} download="data.csv">
+        <a href={dataCsvHref} download="question4-data.csv">
           data.csv
         </a>
       </Box>
