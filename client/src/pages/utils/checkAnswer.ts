@@ -1,5 +1,7 @@
 export type Category = 'AI' | 'SHIT';
 
+import sha512 from 'crypto-js/sha512';
+
 const answers: Record<Category, Record<number, string[]>> = {
   AI: {
     1: [
@@ -22,13 +24,7 @@ const answers: Record<Category, Record<number, string[]>> = {
   SHIT: { 1: ['bbb'] },
 };
 
-const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> => {
-  const encoder = new TextEncoder();
-  const data = encoder.encode(answer);
-  const hashBuffer = await crypto.subtle.digest('SHA-512', data);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  const hashHex = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-  return answers[category][questionId].includes(hashHex);
-};
+const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> =>
+  answers[category][questionId].includes(sha512(answer).toString());
 
 export default checkAnswer;
