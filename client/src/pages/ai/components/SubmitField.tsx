@@ -68,46 +68,19 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
       </Box>
     );
   }
-
-  // return isChecked ? (
-  //   showSuccess ? (
-  //     <Correct setDotLottie={setDotLottie2} />
-  //   ) : (
-  //     <Checked />
-  //   )
-  // ) : showWrong ? (
-  //   <Wrong setDotLottie={setDotLottie} />
-  // ) : (
-  //   <Box display="flex" flexDirection="column" mt="2rem" mb="1.5rem">
-  //     <TextField
-  //       value={value}
-  //       slotProps={{ htmlInput: { style: { textAlign: 'center' } } }}
-  //       onChange={value => {
-  //         setValue(value.target.value);
-  //       }}
-  //     />
-  //     <Button
-  //       variant="text"
-  //       onClick={() => {
-  //         setAnswer(value);
-  //       }}
-  //     >
-  //       check answer
-  //     </Button>
-  //   </Box>
-  // );
 };
 
 const Checked: FC = () => {
   return <CheckIcon color="success" sx={{ height: '13vh', width: 'auto', paddingTop: '2rem' }} />;
 };
 
+const errorAnimationUrl = new URL('../../../assets/ErrorAnimation.json', import.meta.url).href;
 const Wrong: FC<{
   setDotLottie: Dispatch<SetStateAction<DotLottie | null>>;
 }> = ({ setDotLottie }) => (
   <Box width={'20%'} height={'20%'} mb="1rem">
     <DotLottieReact
-      src={`${window.location.origin}/src/assets/ErrorAnimation.json`}
+      src={errorAnimationUrl}
       autoplay
       dotLottieRefCallback={dotLottie => {
         setDotLottie(dotLottie);
@@ -115,12 +88,14 @@ const Wrong: FC<{
     />
   </Box>
 );
+const successAnimationUrl = new URL('../../../assets/SuccessAnimation.json', import.meta.url).href;
+
 const SuccessAnimation: FC<{
   setDotLottie: Dispatch<SetStateAction<DotLottie | null>>;
 }> = ({ setDotLottie }) => (
   <DotLottieReact
     style={{ height: '20%', marginBottom: '1rem' }}
-    src={`${window.location.origin}/src/assets/SuccessAnimation.json`}
+    src={successAnimationUrl}
     autoplay
     dotLottieRefCallback={dotLottie => {
       setDotLottie(dotLottie);

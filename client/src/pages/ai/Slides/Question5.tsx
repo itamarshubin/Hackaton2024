@@ -3,6 +3,8 @@ import { FC } from 'react';
 import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 export const Question5: FC = () => {
+  const dataCsvHref = new URL('../../../assets/q5/data.csv', import.meta.url).href;
+
   return (
     <Box
       display="flex"
@@ -34,7 +36,7 @@ export const Question5: FC = () => {
         <QuestionTypography mt="2rem" color="info">
           קובץ להורדה
         </QuestionTypography>
-        <a href={`${window.location.origin}/src/assets/q4/data.csv`} download="data.csv">
+        <a href={dataCsvHref} download="qestion5-data.csv">
           data.csv
         </a>
       </Box>
