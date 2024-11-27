@@ -1,15 +1,18 @@
-import express from "express";
-
+if (process.env.NODE_ENV === 'dev') require('dotenv').config();
+import express from 'express';
+import { loginRouter } from './router';
+import bodyParser from 'body-parser';
+import cors from 'cors';
 const app = express();
-const port = 3000;
+const port = process.env.PORT;
 
-app.get("/", (req, res) => {
-  res.send("Hello World!");
-});
+app.use(cors());
+app.use(bodyParser.json());
+app.use(loginRouter);
 
 const startServer = () => {
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`app listening on port ${port}`);
   });
 };
 export default startServer;
