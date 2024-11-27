@@ -16,6 +16,7 @@ export const Question2: FC = () => {
       flexDirection="column"
       p="5rem"
       justifyContent="space-between"
+      overflow="auto"
     >
       <Box display="flex" flexDirection="column" alignItems="center" height="70%" width="100%">
         <Typography variant="h2">Question 2</Typography>
