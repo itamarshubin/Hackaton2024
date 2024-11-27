@@ -40,9 +40,7 @@ export const AiQuestions = () => {
           modules={[EffectCreative, Navigation]}
         >
           <>
-            <SwiperSlide>
-              <>{progress >= 1 ? <Question1 /> : <DisabledQuestion />}</>
-            </SwiperSlide>
+            <SwiperSlide>{progress >= 1 ? <Question1 /> : <DisabledQuestion />}</SwiperSlide>
             <SwiperSlide>{progress >= 2 ? <Question2 /> : <DisabledQuestion />}</SwiperSlide>
             <SwiperSlide>{progress >= 3 ? <Question3 /> : <DisabledQuestion />}</SwiperSlide>
             <SwiperSlide>{progress >= 4 ? <Question4 /> : <DisabledQuestion />}</SwiperSlide>

@@ -14,6 +14,7 @@ export const Question1 = () => {
       flexDirection="column"
       p="5rem"
       justifyContent="space-between"
+      overflow="auto"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
         <Typography variant="h2">Question 1</Typography>
