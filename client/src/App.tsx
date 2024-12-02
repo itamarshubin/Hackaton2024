@@ -1,5 +1,6 @@
 import { ThemeProvider } from '@emotion/react';
-import { Box, Card, CircularProgress, createTheme } from '@mui/material';
+import { DotLottieReact } from '@lottiefiles/dotlottie-react';
+import { Box, Card, createTheme } from '@mui/material';
 import { FC, useEffect } from 'react';
 import { BrowserRouter, Outlet, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/header';
@@ -9,7 +10,6 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Mail from './pages/mail';
 import NotFound from './pages/notFound';
-import { DotLottieReact } from '@lottiefiles/dotlottie-react';
 const theme = createTheme({
   palette: {
     mode: 'dark',
