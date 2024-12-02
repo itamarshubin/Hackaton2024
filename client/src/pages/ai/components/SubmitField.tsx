@@ -1,8 +1,8 @@
 import { DotLottie, DotLottieReact } from '@lottiefiles/dotlottie-react';
 import { Box, Button, TextField } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useContext, useEffect, useState } from 'react';
-import checkAnswer, { Category } from '../../utils/checkAnswer';
-import { getAnswers, saveAnswer } from '../../utils/localStorage.util';
+import checkAnswer, { Category } from '../../../utils/checkAnswer';
+import { getAnswers, saveAnswer } from '../../../utils/localStorage.util';
 import { AIContext } from '../contexts/AIContext';
 import CheckIcon from '@mui/icons-material/Check';
 

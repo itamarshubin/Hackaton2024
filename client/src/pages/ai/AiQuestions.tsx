@@ -9,7 +9,7 @@ import './styles.css';
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { EffectCreative, Navigation } from 'swiper/modules';
-import { getAnswers } from '../utils/localStorage.util';
+import { getAnswers } from '../../utils/localStorage.util';
 import { AIContext } from './contexts/AIContext';
 import { DisabledQuestion } from './components/DisabledQuestion';
 import { Question1 } from './Slides/Question1';

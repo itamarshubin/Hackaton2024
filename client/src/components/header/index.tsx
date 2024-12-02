@@ -7,10 +7,10 @@ import IconButton from '@mui/material/IconButton';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import * as React from 'react';
-import Drawer from './Drawer';
-import logo from '../../../assets/cyber.svg';
-import { pages } from '../../../main';
+import logo from '../../assets/cyber.svg';
+import { pages } from '../../main';
 import { useNavigate } from 'react-router-dom';
+import Drawer from './Drawer';
 
 export default function DrawerAppBar() {
   const [mobileOpen, setMobileOpen] = React.useState(false);

@@ -3,10 +3,13 @@ import express from 'express';
 import { loginRouter } from './router';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import cookieParser from 'cookie-parser';
+
 const app = express();
 const port = process.env.PORT;
 
-app.use(cors());
+app.use(cookieParser());
+app.use(cors({ credentials: true, origin: 'http://localhost:5173' }));
 app.use(bodyParser.json());
 app.use(loginRouter);
 
