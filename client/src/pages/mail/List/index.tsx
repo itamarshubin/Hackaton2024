@@ -26,7 +26,7 @@ const MailList: FC<{ mails: Mail[] }> = ({ mails }) => {
     <List sx={{ width: '100%', maxWidth: '70vw' }}>
       {mails.map((value, index) => {
         return (
-          <ListItem key={index} disablePadding onClick={handleMailClick(value, index)}>
+          <ListItem key={index} disablePadding onClick={handleMailClick(index)}>
             <ListItemButton role={undefined}>
               <Box width="100%">
                 <Box display="flex" justifyContent="space-between" width="100%">
