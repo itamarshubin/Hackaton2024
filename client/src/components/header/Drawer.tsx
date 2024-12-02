@@ -9,9 +9,9 @@ import {
   Typography,
 } from '@mui/material';
 import { Dispatch, FC, SetStateAction } from 'react';
-import logo from '../../../assets/cyber.svg';
+import logo from '../../assets/cyber.svg';
 import { useNavigate } from 'react-router-dom';
-import { pages } from '../../../main';
+import { pages } from '../../main';
 
 interface DrawerProps {
   isOpen: boolean;

@@ -1,21 +1,21 @@
-import CommentIcon from '@mui/icons-material/Comment';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
-import * as React from 'react';
+import { FC, useState } from 'react';
+import { Mail } from '../../../hooks/login.hook';
+import { Box, Typography } from '@mui/material';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+const MailList: FC<{ mails: Mail[] }> = ({ mails }) => {
+  const [checked, setChecked] = useState<number[]>([]);
 
-export default function CheckboxList() {
-  const [checked, setChecked] = React.useState([0]);
-
-  const handleToggle = (value: number) => () => {
-    const currentIndex = checked.indexOf(value);
+  const handleMailClick = (value: Mail, index: number) => () => {
+    const currentIndex = checked.indexOf(index);
     const newChecked = [...checked];
 
     if (currentIndex === -1) {
-      newChecked.push(value);
+      newChecked.push(index);
     } else {
       newChecked.splice(currentIndex, 1);
     }
@@ -25,33 +25,38 @@ export default function CheckboxList() {
 
   return (
     <List sx={{ width: '100%', maxWidth: '70vw' }}>
-      {[0, 1, 2, 3].map(value => {
-        const labelId = `checkbox-list-label-${value}`;
-
+      {mails.map((value, index) => {
         return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.includes(value)}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
+          <ListItem key={index} disablePadding onClick={handleMailClick(value, index)}>
+            <ListItemButton role={undefined}>
+              <Box width="100%">
+                <Box display="flex" justifyContent="space-between" width="100%">
+                  <Typography fontWeight="bold">{value.from}</Typography>
+                  <Typography> {value.subject}</Typography>
+                  <Typography>
+                    {checked.includes(index) ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
+                  </Typography>
+                </Box>
+                {checked.includes(index) && (
+                  <Box
+                    width="100%"
+                    display="flex"
+                    alignItems="center"
+                    flexDirection="column"
+                    sx={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+                  >
+                    <Typography variant="h3">{value.subject}</Typography>
+                    <Typography marginLeft="1%" variant="h6">
+                      {value.content}
+                    </Typography>
+                  </Box>
+                )}
+              </Box>
             </ListItemButton>
           </ListItem>
         );
       })}
     </List>
   );
-}
+};
+export default MailList;
