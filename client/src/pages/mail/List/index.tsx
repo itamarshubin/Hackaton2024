@@ -1,16 +1,15 @@
+import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
+import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
+import { Box, Typography } from '@mui/material';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
 import { FC, useState } from 'react';
 import { Mail } from '../../../hooks/login.hook';
-import { Box, Typography } from '@mui/material';
-import KeyboardArrowRightIcon from '@mui/icons-material/KeyboardArrowRight';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 const MailList: FC<{ mails: Mail[] }> = ({ mails }) => {
   const [checked, setChecked] = useState<number[]>([]);
 
-  const handleMailClick = (value: Mail, index: number) => () => {
+  const handleMailClick = (index: number) => () => {
     const currentIndex = checked.indexOf(index);
     const newChecked = [...checked];
 
