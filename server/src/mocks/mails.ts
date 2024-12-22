@@ -2,34 +2,16 @@ type Mail = { from: string; content: string; subject: string };
 
 const mails: Mail[] = [
   {
-    from: 'sender1',
+    from: 'UndercoverKugel',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget pharetra lectus, in laoreet nulla. Proin rutrum nunc id nisl semper convallis.',
-    subject: 'subject 1',
+      'I tried connecting to the secret service, at <ip> on port <port> just like you said. I got a number, and sent the service back the hour*number, but it didn\'t work. Any idea why?',
+    subject: "Can't connect to secret service",
   },
   {
-    from: 'sender2',
+    from: 'PelegTechSupport',
     content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget pharetra lectus, in laoreet nulla. Proin rutrum nunc id nisl semper convallis.',
-    subject: 'subject 2',
-  },
-  {
-    from: 'sender3',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget pharetra lectus, in laoreet nulla. Proin rutrum nunc id nisl semper convallis.',
-    subject: 'subject 3',
-  },
-  {
-    from: 'sender4',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget pharetra lectus, in laoreet nulla. Proin rutrum nunc id nisl semper convallis.',
-    subject: 'subject 4',
-  },
-  {
-    from: 'sender5',
-    content:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. In eget pharetra lectus, in laoreet nulla. Proin rutrum nunc id nisl semper convallis.',
-    subject: 'subject 5',
+      'Good morning UK. The reason is because you need to send back (hour+minute)*number. Good luck!',
+    subject: "Reply: Can't connect to secret service",
   },
 ];
 
