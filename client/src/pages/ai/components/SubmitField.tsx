@@ -27,7 +27,10 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
       if (isCorrect) {
         setIsChecked(true);
         saveAnswer(category, questionId, answer);
-        aiContext?.setProgress(questionId + 1);
+
+        if ((aiContext?.progress || 0) < questionId + 1) {
+          aiContext?.setProgress(questionId + 1);
+        }
       }
       if (answer && !isCorrect) {
         setShowWrong(true);
@@ -49,7 +52,7 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
     return showError ? (
       <Wrong setDotLottie={setErrorLottie} />
     ) : (
-      <Box display="flex" flexDirection="column" mt="2rem" mb="1.5rem">
+      <Box display="flex" flexDirection="column" mt="2rem" mb="1.5rem" gap="1rem">
         <TextField
           value={value}
           slotProps={{ htmlInput: { style: { textAlign: 'center' } } }}
@@ -59,6 +62,7 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
         />
         <Button
           variant="text"
+          size="large"
           onClick={() => {
             setAnswer(value.toLocaleUpperCase());
           }}
@@ -71,14 +75,14 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
 };
 
 const Checked: FC = () => {
-  return <CheckIcon color="success" sx={{ height: '13vh', width: 'auto', paddingTop: '2rem' }} />;
+  return <CheckIcon color="success" sx={{ height: '150px', width: 'auto', paddingTop: '2rem' }} />;
 };
 
 const errorAnimationUrl = new URL('../../../assets/ErrorAnimation.json', import.meta.url).href;
 const Wrong: FC<{
   setDotLottie: Dispatch<SetStateAction<DotLottie | null>>;
 }> = ({ setDotLottie }) => (
-  <Box width={'20%'} height={'20%'} mb="1rem">
+  <Box width={'150px'} height={'150px'} >
     <DotLottieReact
       src={errorAnimationUrl}
       autoplay
@@ -94,7 +98,7 @@ const SuccessAnimation: FC<{
   setDotLottie: Dispatch<SetStateAction<DotLottie | null>>;
 }> = ({ setDotLottie }) => (
   <DotLottieReact
-    style={{ height: '20%', marginBottom: '1rem' }}
+    style={{ height: '150px' }}
     src={successAnimationUrl}
     autoplay
     dotLottieRefCallback={dotLottie => {

@@ -8,18 +8,13 @@ export const Question5: FC = () => {
   return (
     <Box
       display="flex"
-      height="100%"
-      width="100%"
       alignItems="center"
-      mt="2rem"
       flexDirection="column"
-      p="5rem"
       justifyContent="space-between"
       overflow="auto"
     >
-      <Box display="flex" flexDirection="column" alignItems="center" height="70%" width="100%">
-        <Typography variant="h2">Question 5</Typography>
-        <QuestionTypography mt="2rem">
+      <Box display="flex" flexDirection="column" alignItems="center">
+        <QuestionTypography>
           אתם מקישים את הקוד על הדלת אך עדיין לא פותחים, הנהמות ביידיש לא מפסיקות והן נשמעות מפחידות וקרובות מתמיד,
           פתאום הדלת נפרצת ושם עומד המשב"ק! החסיד הכי גדול ושמן שיש בכל מאה שערים כולה, אתם מתחילים לרוץ על חייכם בלי
           להסתכל לאיפה אפילו, פתאום אתם מגיעים למבוי סתום! כשאתם עומדים מול הקיר אתם שומעים את המשב"ק מתקרב, הוא נראה
@@ -29,15 +24,18 @@ export const Question5: FC = () => {
           המאפיינים שלפיהם מסווגים כל כשרות של מאכל היא התשובה שלכם! מצאו אילו 3 מאפיינים קריטיים לסיווג כשרות המאכל,
           משם אתם כבר תדעו מה לעשות.
         </QuestionTypography>
+        <br/>
 
-        <QuestionTypography mt="1rem">
+        <QuestionTypography>
           מעבר לתחושה הקריפית שמעביר בכם החדר פתאום הדלת נסגרת! זאת מלכודת! על הדלת מופיע מנעול ועליו קוד, בלית ברירה
           אתם חוזרים לבהות בחדר ובמיוחד ב2 התמונות של הרב גרוס, אולי המשם תבוא הישועה...
         </QuestionTypography>
-        <QuestionTypography mt="2rem" color="info">
+        <br/>
+        <br/>
+        <QuestionTypography color="#da80ff">
           קובץ להורדה
         </QuestionTypography>
-        <a href={dataCsvHref} download="qestion5-data.csv">
+        <a href={dataCsvHref} style={{ color: '#feb3ff'}} download="qestion5-data.csv">
           data.csv
         </a>
       </Box>

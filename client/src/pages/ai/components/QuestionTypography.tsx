@@ -3,7 +3,7 @@ import { FC } from 'react';
 
 const QuestionTypography: FC<{ children: string } & TypographyProps> = params => {
   return (
-    <Typography variant="h5" align="center" dir="rtl" {...params}>
+    <Typography dir="rtl" width='100%' {...params}>
       {params.children}
     </Typography>
   );

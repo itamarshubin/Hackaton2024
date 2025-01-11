@@ -20,37 +20,7 @@ export default function DrawerAppBar() {
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
       <AppBar component="nav" sx={{ background: '#191a19' }}>
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={() => setMobileOpen(!mobileOpen)}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" component="div" sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}>
-            <img style={{ cursor: 'pointer' }} src={logo} width="60px" onClick={() => navigate('/')} />
-          </Typography>
-          <Box sx={{ display: { xs: 'none', sm: 'block' } }}>
-            {pages.map(item => (
-              <Button
-                key={item}
-                sx={{ color: '#fff' }}
-                onClick={() => {
-                  navigate(item);
-                }}
-              >
-                {item}
-              </Button>
-            ))}
-          </Box>
-        </Toolbar>
       </AppBar>
-      <nav>
-        <Drawer isOpen={mobileOpen} setIsOpen={setMobileOpen} />
-      </nav>
     </Box>
   );
 }

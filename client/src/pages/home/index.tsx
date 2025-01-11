@@ -2,9 +2,10 @@
 import { Box, Typography } from "@mui/material";
 import Grid from '@mui/material/Grid2';
 import { styled } from "@mui/system";
+import { useNavigate } from 'react-router-dom';
 
 // Styled component for card
-const Card = styled(Box)(({ theme, bgcolor }) => ({
+const CategoryCard = styled(Box)(_ => ({
   borderRadius: "12px",
   padding: "16px",
   color: "white",
@@ -27,16 +28,17 @@ const categories = [
 ];
 
 const Home = () => {
+  const navigate = useNavigate();
+
   return (
     <Box display="flex" flexDirection="column" alignItems="center" margin="0 20px">
       <Box display="flex" flexDirection="column" alignItems="center" maxWidth="820px" >
         <Typography fontWeight="bold" fontSize="4rem">
-          Title
+          Hackathon 2025
         </Typography>
 
         <Typography>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempore officiis dolore saepe quis quae labore nulla ab
-          pariatur totam. Blanditiis architecto ratione dolor at atque unde facilis porro eaque molestias.
+        Choose one of the following thrilling missions and dive into an adventure that will challenge your skills and ignite your passion for problem-solving. Whether you’re a mastermind of AI, a cyber expert, or a software wizard, there’s a mission waiting for you. Are you ready to take on the challenge?
         </Typography>
 
 
@@ -44,8 +46,10 @@ const Home = () => {
           <Grid container spacing={2}>
             {categories.map((category) => (
               <Grid size={{ xs: 12, md: 4}}>
-                <Card sx={{
+                <CategoryCard sx={{
                   background: `linear-gradient(to right, ${category.gradient[0]}, ${category.gradient[1]})`
+                }} onClick={() => {
+                  navigate(category.name);
                 }}>
                   <Typography variant="h5" fontWeight="bold">
                     {category.name}
@@ -62,7 +66,7 @@ const Home = () => {
                   >
                     {category.icon}
                   </Typography>
-                </Card>
+                </CategoryCard>
               </Grid>
             ))}
           </Grid>
