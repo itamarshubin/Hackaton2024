@@ -31,7 +31,8 @@ export const DevQuestions: FC = () => {
         >
           {developmentQuestions.map((question, index) => (
             <SwiperSlide>
-              {progress >= index + 1 ? <DevQuestion devQuestion={question} /> : <DisabledQuestion />}
+              {/* {progress >= index + 1 ? <DevQuestion devQuestion={question} /> : <DisabledQuestion />} */}
+              {<DevQuestion devQuestion={question} />}
             </SwiperSlide>
           ))}
         </Swiper>

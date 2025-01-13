@@ -32,7 +32,6 @@ const answers: Record<Category, Record<number, string[]>> = {
 };
 
 const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> => {
-  console.log(sha512(answer).toString());
   return answers[category][questionId].includes(sha512(answer).toString());
 };
 
