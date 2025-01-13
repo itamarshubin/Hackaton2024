@@ -1,8 +1,8 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-type DevelopmentContext = {
+export type IDevelopmentContext = {
   progress: number;
   setProgress: Dispatch<SetStateAction<number>>;
 };
 
-export const DevelopmentContext = createContext<DevelopmentContext | null>(null);
+export const DevelopmentContext = createContext<IDevelopmentContext | null>(null);

@@ -13,7 +13,7 @@ export type DevelopmentQuestion = {
 export const developmentQuestions: DevelopmentQuestion[] = [
   {
     questionNumber: 1,
-    title: 'מגמת עלייה',
+    title: '1מגמת עלייה',
     generalIntroduction: `לאחר חודש אלול מלא בתרדמת קולקטיבית בשיעור אחרי מנחה, הישיבה החליטה לשנות כל מיני דברים כדי להעלות את רמת הערנות. לא רלוונטי איך בוחרים, אבל הוחלט לתת לכל יום ״ציון  ערנות״`,
     puzzleSampleDescription: `לדוגמא, להלן רשימה של ציונים:`,
     puzzleSample: `
@@ -47,8 +47,8 @@ export const developmentQuestions: DevelopmentQuestion[] = [
     finalQuestion: 'כמה פעמים היה לישיבה עלייה מהיום לפני???',
   },
   {
-    questionNumber: 1,
-    title: 'מגמת עלייה',
+    questionNumber: 2,
+    title: '2מגמת עלייה',
     generalIntroduction: `לאחר חודש אלול מלא בתרדמת קולקטיבית בשיעור אחרי מנחה, הישיבה החליטה לשנות כל מיני דברים כדי להעלות את רמת הערנות. לא רלוונטי איך בוחרים, אבל הוחלט לתת לכל יום ״ציון  ערנות״`,
     puzzleSampleDescription: `לדוגמא, להלן רשימה של ציונים:`,
     puzzleSample: `
@@ -82,8 +82,8 @@ export const developmentQuestions: DevelopmentQuestion[] = [
     finalQuestion: 'כמה פעמים היה לישיבה עלייה מהיום לפני???',
   },
   {
-    questionNumber: 1,
-    title: 'מגמת עלייה',
+    questionNumber: 2,
+    title: 'מגמת עלייה 2',
     generalIntroduction: `לאחר חודש אלול מלא בתרדמת קולקטיבית בשיעור אחרי מנחה, הישיבה החליטה לשנות כל מיני דברים כדי להעלות את רמת הערנות. לא רלוונטי איך בוחרים, אבל הוחלט לתת לכל יום ״ציון  ערנות״`,
     puzzleSampleDescription: `לדוגמא, להלן רשימה של ציונים:`,
     puzzleSample: `

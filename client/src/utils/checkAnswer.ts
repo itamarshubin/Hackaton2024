@@ -25,6 +25,9 @@ const answers: Record<Category, Record<number, string[]>> = {
     1: [
       '21b4f4bd9e64ed355c3eb676a28ebedaf6d8f17bdc365995b319097153044080516bd083bfcce66121a3072646994c8430cc382b8dc543e84880183bf856cff5',
     ],
+    2: [
+      '21b4f4bd9e64ed355c3eb676a28ebedaf6d8f17bdc365995b319097153044080516bd083bfcce66121a3072646994c8430cc382b8dc543e84880183bf856cff5',
+    ],
   },
 };
 

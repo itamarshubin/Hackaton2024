@@ -10,8 +10,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Mail from './pages/mail';
 import NotFound from './pages/notFound';
-import { DevelopmentQuestions } from './pages/development/DevelopmentQuestions';
-import { DevQuestions } from './pages/development';
+import { DevQuestions } from './pages/development/DevelopmentQuestions';
 const theme = createTheme({
   palette: {
     mode: 'dark',

@@ -3,8 +3,9 @@ import { Box, Button, TextField } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useContext, useEffect, useState } from 'react';
 import checkAnswer, { Category } from '../../../utils/checkAnswer';
 import { getAnswers, saveAnswer } from '../../../utils/localStorage.util';
-import { AIContext } from '../contexts/AIContext';
+import { AIContext, IAIContext } from '../contexts/AIContext';
 import CheckIcon from '@mui/icons-material/Check';
+import { DevelopmentContext, IDevelopmentContext } from '../../development/contexts/DevelopmentContext';
 
 const SubmitField: FC<{ questionId: number; category: Category; spice?: string }> = ({
   questionId,
@@ -16,7 +17,11 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowWrong] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const aiContext = useContext(AIContext);
+  const contexts: Record<Category, React.Context<IDevelopmentContext | IAIContext | null>> = {
+    AI: AIContext,
+    DEVELOPMENT: DevelopmentContext,
+  };
+  const aiContext = useContext(contexts[category]);
   const [errorLottie, setErrorLottie] = useState<DotLottie | null>(null);
   const [successLottie, setSuccessLottie] = useState<DotLottie | null>(null);
 

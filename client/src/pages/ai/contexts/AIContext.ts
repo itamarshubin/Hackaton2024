@@ -1,8 +1,8 @@
 import { createContext, Dispatch, SetStateAction } from 'react';
 
-type AIContext = {
+export type IAIContext = {
   progress: number;
   setProgress: Dispatch<SetStateAction<number>>;
 };
 
-export const AIContext = createContext<AIContext | null>(null);
+export const AIContext = createContext<IAIContext | null>(null);
