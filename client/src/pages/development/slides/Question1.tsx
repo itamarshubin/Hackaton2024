@@ -1,10 +1,10 @@
 import { Box, Typography } from '@mui/material';
 // import phoneNumber from '../../../assets/q1/phoneNumberpng.png';
+import { FC } from 'react';
 import QuestionTypography from '../../ai/components/QuestionTypography';
 import SubmitField from '../../ai/components/SubmitField';
-import React from 'react';
 
-export const Question1: React.FC = () => {
+export const Question1: FC = () => {
   return (
     <Box
       display="flex"
