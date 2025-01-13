@@ -1,4 +1,4 @@
-export type Category = 'AI' | 'SHIT';
+export type Category = 'AI' | 'DEVELOPMENT';
 
 import sha512 from 'crypto-js/sha512';
 
@@ -21,10 +21,16 @@ const answers: Record<Category, Record<number, string[]>> = {
       '2541ce588c3d3f94ab9be2d54dec457dcd37065a525bb2c80d1512c4e1e639a2b03fbcb7148fb564d30eae5e415f566a9a2b7710463b962197ce4dc98f52bf31',
     ],
   },
-  SHIT: { 1: ['bbb'] },
+  DEVELOPMENT: {
+    1: [
+      '21b4f4bd9e64ed355c3eb676a28ebedaf6d8f17bdc365995b319097153044080516bd083bfcce66121a3072646994c8430cc382b8dc543e84880183bf856cff5',
+    ],
+  },
 };
 
-const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> =>
-  answers[category][questionId].includes(sha512(answer).toString());
+const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> => {
+  console.log(sha512(answer).toString());
+  return answers[category][questionId].includes(sha512(answer).toString());
+};
 
 export default checkAnswer;

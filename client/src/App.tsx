@@ -10,6 +10,7 @@ import Home from './pages/home';
 import Login from './pages/login';
 import Mail from './pages/mail';
 import NotFound from './pages/notFound';
+import { DevelopmentQuestions } from './pages/development/DevelopmentQuestions';
 const theme = createTheme({
   palette: {
     mode: 'dark',
@@ -26,6 +27,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/home" element={<Home />} />
             <Route path="/ai" element={<AiQuestions />} />
+            <Route path="/Development" element={<DevelopmentQuestions />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/cyber" element={<Mail />} />
             </Route>
