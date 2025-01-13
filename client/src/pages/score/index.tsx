@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import CountUp from 'react-countup';
 import { database } from '../../firebase';
 import { ref, onValue } from 'firebase/database';
-import { ArrowUp, ArrowDown } from 'lucide-react';
 import { Box, Typography } from '@mui/material';
 import CountdownTimer from '../../components/timer';
 
