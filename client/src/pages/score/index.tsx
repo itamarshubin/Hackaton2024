@@ -5,6 +5,7 @@ import { database } from '../../firebase';
 import { ref, onValue } from 'firebase/database';
 import { ArrowUp, ArrowDown } from 'lucide-react';
 import { Box, Typography } from '@mui/material';
+import CountdownTimer from '../../components/timer';
 
 const Scoreboard = () => {
   const [scores, setScores] = useState([]);
@@ -60,49 +61,52 @@ const Scoreboard = () => {
   };
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
-      <Typography variant='h2'>Scoreboard</Typography>
-      <Box mt="5vh" width={"100%"}>
-        <AnimatePresence>
-          {scores.map((item) => {
-            const position = getTeamPosition(item.team);
-            
-            return (
-              <motion.div
-                key={item.team}
-                initial={{ y: position * 40 }}
-                animate={{ y: position * 40 }}
-                transition={{
-                  type: "spring",
-                  stiffness: 200,
-                  damping: 25,
-                }}
-                style={{ display: 'flex', gap: '20px' }}
-              >
-                <Box width={"50%"} sx={{ display: 'flex', justifyContent: 'right' }}>
-                  <Typography variant='h5'>
-                    {item.team}
-                  </Typography>
-                </Box>
-                <Box width={"50%"}>
-                  <CountUp
-                    start={prevScores[item.team] || 0}
-                    end={item.score}
-                    duration={2}
-                    useEasing={true}
-                  >
-                    {({ countUpRef }) => (
-                      <Typography variant='h5' ref={countUpRef}>
-                      </Typography>
-                    )}
-                  </CountUp>
-                </Box>
-              </motion.div>
-            );
-          })}
-        </AnimatePresence>
-      </Box>
-    </div>
+    <>
+      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', width: '100%' }}>
+        <CountdownTimer targetDate={new Date(1737084600000)}/>
+        <Typography mt="4vh" variant='h2'>Leader Board</Typography>
+        <Box mt="2vh" width={"100%"}>
+          <AnimatePresence>
+            {scores.map((item) => {
+              const position = getTeamPosition(item.team);
+              
+              return (
+                <motion.div
+                  key={item.team}
+                  initial={{ y: position * 10 }}
+                  animate={{ y: position * 10 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 200,
+                    damping: 25,
+                  }}
+                  style={{ display: 'flex', gap: '20px' }}
+                >
+                  <Box width={"50%"} sx={{ display: 'flex', justifyContent: 'right' }}>
+                    <Typography variant='h5'>
+                      {item.team}
+                    </Typography>
+                  </Box>
+                  <Box width={"50%"}>
+                    <CountUp
+                      start={prevScores[item.team] || 0}
+                      end={item.score}
+                      duration={2}
+                      useEasing={true}
+                    >
+                      {({ countUpRef }) => (
+                        <Typography variant='h5' ref={countUpRef}>
+                        </Typography>
+                      )}
+                    </CountUp>
+                  </Box>
+                </motion.div>
+              );
+            })}
+          </AnimatePresence>
+        </Box>
+      </div>
+    </>
   );
 };
 

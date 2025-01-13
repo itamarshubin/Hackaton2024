@@ -69,6 +69,31 @@ const Home = () => {
                 </CategoryCard>
               </Grid>
             ))}
+            <br/>
+            <br/>
+            <Grid size={{ xs: 12, md: 12}}>
+              <CategoryCard sx={{
+                background: `linear-gradient(to right,rgb(16, 61, 112),rgb(59, 98, 204))`
+              }} onClick={() => {
+                navigate('score');
+              }}>
+                <Typography variant="h5" fontWeight="bold">
+                  Leader Board
+                </Typography>
+                <Typography
+                  variant="h1"
+                  sx={{
+                    position: "absolute",
+                    bottom: "-10px",
+                    right: "10px",
+                    fontSize: "84px",
+                    opacity: 0.2,
+                  }}
+                >
+                  🥇🥈🥉
+                </Typography>
+              </CategoryCard>
+            </Grid>
           </Grid>
         </Box>
       </Box>
