@@ -2,20 +2,19 @@
 import { Box } from '@mui/material';
 import { useState } from 'react';
 import { getAnswers } from '../../utils/localStorage.util';
-import { AIContext } from './contexts/AIContext';
+import { SoftwareContext } from './contexts/SoftwareContext';
 import { Question1 } from './Slides/Question1';
 import { Question2 } from './Slides/Question2';
 import { Question3 } from './Slides/Question3';
 import { Question4 } from './Slides/Question4';
-import { Question5 } from './Slides/Question5';
 
 import MobileStepper from '@mui/material/MobileStepper';
 import Paper from '@mui/material/Paper';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 
-export const AiQuestions = () => {
-  const [progress, setProgress] = useState<number>(Object.keys(getAnswers('AI')).length + 1);
+export const SoftwareQuestions = () => {
+  const [progress, setProgress] = useState<number>(Object.keys(getAnswers('SOFTWARE')).length + 1);
   const [activeQuestion, setActiveQuestion] = useState<number>(0)
 
   const handleNext = () => {
@@ -31,13 +30,12 @@ export const AiQuestions = () => {
     Question2,
     Question3,
     Question4,
-    Question5
   ]
 
   const CurrentQuestion = questionComponent[activeQuestion];
 
   return (
-    <AIContext.Provider value={{ progress, setProgress }}>
+    <SoftwareContext.Provider value={{ progress, setProgress }}>
       <Box display="flex" flexDirection="column" alignItems="center">
         <Box maxWidth="820px" sx={{ flexGrow: 1 }}>
         <Paper
@@ -50,7 +48,7 @@ export const AiQuestions = () => {
             bgcolor: 'background.default',
           }}
         >
-          <Typography variant="h4" sx={{ margin: 'auto' }}>משימה {activeQuestion + 1} - AI</Typography>
+          <Typography variant="h4" sx={{ margin: 'auto' }}>משימה {activeQuestion + 1} - Software</Typography>
         </Paper>
         <Paper
           elevation={1}>
@@ -83,6 +81,6 @@ export const AiQuestions = () => {
         />
         </Box>
       </Box>
-    </AIContext.Provider>
+    </SoftwareContext.Provider>
   );
 };

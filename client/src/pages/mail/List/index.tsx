@@ -23,15 +23,15 @@ const MailList: FC<{ mails: Mail[] }> = ({ mails }) => {
   };
 
   return (
-    <List sx={{ width: '100%', maxWidth: '70vw' }}>
+    <List sx={{ width: '100%' }}>
       {mails.map((value, index) => {
         return (
-          <ListItem key={index} disablePadding onClick={handleMailClick(index)}>
-            <ListItemButton role={undefined}>
+          <ListItem key={index} disablePadding onClick={handleMailClick(index)} sx={{mt: '4px'}}>
+            <ListItemButton role={undefined} >
               <Box width="100%">
-                <Box display="flex" justifyContent="space-between" width="100%">
-                  <Typography fontWeight="bold">{value.from}</Typography>
-                  <Typography> {value.subject}</Typography>
+                <Box display="flex" width="100%" gap="1rem">
+                  <Typography fontWeight="bold" minWidth="100px">{value.from}</Typography>
+                  <Typography flexGrow="1"> {value.subject}</Typography>
                   <Typography>
                     {checked.includes(index) ? <KeyboardArrowDownIcon /> : <KeyboardArrowRightIcon />}
                   </Typography>
@@ -40,12 +40,12 @@ const MailList: FC<{ mails: Mail[] }> = ({ mails }) => {
                   <Box
                     width="100%"
                     display="flex"
-                    alignItems="center"
                     flexDirection="column"
-                    sx={{ backgroundColor: 'rgba(255, 255, 255, 0.3)' }}
+                    padding="25px"
+                    sx={{ backgroundColor: 'rgb(148, 111, 63)' }}
                   >
-                    <Typography variant="h3">{value.subject}</Typography>
-                    <Typography marginLeft="1%" variant="h6">
+                    <Typography variant="h5" mb="10px">{value.subject}</Typography>
+                    <Typography>
                       {value.content}
                     </Typography>
                   </Box>

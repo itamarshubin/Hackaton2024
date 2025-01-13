@@ -1,4 +1,4 @@
-export type Category = 'AI' | 'SHIT';
+export type Category = 'AI'| 'SOFTWARE';
 
 import sha512 from 'crypto-js/sha512';
 
@@ -21,7 +21,15 @@ const answers: Record<Category, Record<number, string[]>> = {
       '2541ce588c3d3f94ab9be2d54dec457dcd37065a525bb2c80d1512c4e1e639a2b03fbcb7148fb564d30eae5e415f566a9a2b7710463b962197ce4dc98f52bf31',
     ],
   },
-  SHIT: { 1: ['bbb'] },
+  SOFTWARE: {
+    1: ['140361d0656588c9023bd4468f6671fd8835968becaaad0abf13201ab1bda01ef8c6126440aa184974c277065ebab70c3a5c26b367fed8e930f5e903843313dd'],
+    2: [
+      'fc4314ceda57d7671155f54ed274c7741a4cf567bd3ff0eab74a97f5a28a302e2ff3745d471f3b08623436da12a0d8c033a4d5dd40f784f6a4c5266398b14382',
+      '822aabec0fb03dbf68fa3fd431d64c434bd1eb9eb127e2a13373d18df062cf210105fb9fa68e3f7899d36dd6a9ed9ae2c83414389e7a2924ec77d5ea219be4ee',
+    ],
+    3: [],
+    4: []
+  }
 };
 
 const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> =>

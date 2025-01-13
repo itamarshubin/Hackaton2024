@@ -17,16 +17,27 @@ const Login = () => {
     navigate('/cyber');
   };
 
+  // (() => {
+  //   trigger({ username: 'aaa', password: 'bbbb' });
+  //   navigate('/cyber');
+  // })()
+
   return (
-    <Box display="flex" justifyContent="center" height="30vh">
-      <Card sx={{ width: '20%', minWidth: '350px', minHeight: '300px', marginTop: '5%' }}>
+    <Box display="flex" justifyContent="center">
+      <Card sx={{ 
+        width: '90%',
+        maxWidth: '820px',
+        marginTop: '15vh',
+        paddingTop: '5vh',
+        paddingBottom: '5vh',
+      }}>
         <form onSubmit={handleSubmit(onsubmit)}>
           <Box display="flex" flexDirection="column" alignItems="center">
-            <Typography variant="h4">Sign in to view mails</Typography>
+            <Typography variant="h3" >Sign in</Typography>
+            <Typography variant="h6" color="#ffc75e" mb="2rem">into your email inbox</Typography>
             <TextField
               autoComplete="off"
               label="Username"
-              sx={{ marginTop: '2%' }}
               {...register('username', { required: 'Username is required' })}
               error={!!errors.username}
               helperText={errors.username?.message}
@@ -35,7 +46,7 @@ const Login = () => {
               autoComplete="off"
               label="Password"
               type="password"
-              sx={{ marginTop: '2%' }}
+              sx={{ marginTop: '1rem' }}
               {...register('password', { required: 'Password is requried' })}
               error={!!errors.password}
               helperText={errors.password?.message}
@@ -43,7 +54,7 @@ const Login = () => {
             <Button variant="contained" sx={{ marginTop: '2%' }} onClick={handleSubmit(onsubmit)}>
               sign in
             </Button>
-            {loginError && <Typography color="error">Wrong password</Typography>}
+            {loginError && <Typography variant="h5" color="error" marginTop="2rem">Wrong password</Typography>}
           </Box>
         </form>
       </Card>

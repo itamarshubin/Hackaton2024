@@ -3,7 +3,7 @@ import { Box, Button, TextField } from '@mui/material';
 import { Dispatch, FC, SetStateAction, useContext, useEffect, useState } from 'react';
 import checkAnswer, { Category } from '../../../utils/checkAnswer';
 import { getAnswers, saveAnswer } from '../../../utils/localStorage.util';
-import { AIContext } from '../contexts/AIContext';
+import { SoftwareContext } from '../contexts/SoftwareContext';
 import CheckIcon from '@mui/icons-material/Check';
 
 const SubmitField: FC<{ questionId: number; category: Category; spice?: string }> = ({
@@ -16,20 +16,21 @@ const SubmitField: FC<{ questionId: number; category: Category; spice?: string }
   const [isChecked, setIsChecked] = useState(false);
   const [showError, setShowWrong] = useState(false);
   const [showSuccess, setShowSuccess] = useState(false);
-  const aiContext = useContext(AIContext);
+  const softwareContext = useContext(SoftwareContext);
   const [errorLottie, setErrorLottie] = useState<DotLottie | null>(null);
   const [successLottie, setSuccessLottie] = useState<DotLottie | null>(null);
 
   useEffect(() => {
     (async () => {
+      console.log(answer)
       const isCorrect = await checkAnswer(category, questionId, answer + spice);
       if (await checkAnswer(category, questionId, value.toLocaleUpperCase() + spice)) setShowSuccess(true);
       if (isCorrect) {
         setIsChecked(true);
         saveAnswer(category, questionId, answer);
 
-        if ((aiContext?.progress || 0) < questionId + 1) {
-          aiContext?.setProgress(questionId + 1);
+        if ((softwareContext?.progress || 0) < questionId + 1) {
+          softwareContext?.setProgress(questionId + 1);
         }
       }
       if (answer && !isCorrect) {
