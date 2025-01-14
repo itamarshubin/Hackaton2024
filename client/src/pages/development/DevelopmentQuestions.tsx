@@ -6,7 +6,6 @@ import { DevelopmentContext } from './contexts/DevelopmentContext';
 import { Box } from '@mui/material';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { EffectCreative, Navigation } from 'swiper/modules';
-import { DisabledQuestion } from '../ai/components/DisabledQuestion';
 
 export const DevQuestions: FC = () => {
   const [progress, setProgress] = useState<number>(Object.keys(getAnswers('DEVELOPMENT')).length + 1);
@@ -32,7 +31,7 @@ export const DevQuestions: FC = () => {
           {developmentQuestions.map((question, index) => (
             <SwiperSlide>
               {/* {progress >= index + 1 ? <DevQuestion devQuestion={question} /> : <DisabledQuestion />} */}
-              {<DevQuestion devQuestion={question} />}
+              {<DevQuestion devQuestion={question} index={index + 1} />}
             </SwiperSlide>
           ))}
         </Swiper>
