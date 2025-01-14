@@ -2,9 +2,11 @@ import { Box, Typography } from '@mui/material';
 import { FC } from 'react';
 import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
-import Link from '@mui/material/Link';
 
 export const Question3: FC = () => {
+  const LinuxHref = new URL('../../../assets/software/q3/linux-program', import.meta.url).href;
+  const WindowsHref = new URL('../../../assets/software/q3/windows-program.exe', import.meta.url).href;
+
   return (
     <Box
       display="flex"
@@ -19,6 +21,17 @@ export const Question3: FC = () => {
         <QuestionTypography>
         כעת אתם ניצבים מול השומר של הכספת – תוכנה שמאתגרת את כוח הרצון שלכם. השומר מבקש מכם לנחש מספר מפתח בין 1 ל-1,000,000. רק מספר אחד נכון, וכל ניסיון שגוי נחשב ככישלון. אין קיצורי דרך – אתם לא מוגבלים בכמות הניסיונות, תצטרכו לנחש את מספר המפתח. הצלחה במשימה זו תוביל אתכם להודעה סודית, רמז שיכין אתכם לאתגר האחרון.       
         </QuestionTypography>
+        <br/>
+        <br/>
+        <Box display="flex" justifyContent="center" gap="30px">
+          <a href={LinuxHref} style={{ color: '#feb3ff'}} download="linux-program">
+            Download Linux
+          </a>
+          <a href={WindowsHref} style={{ color: '#feb3ff'}} download="windows-program.exe">
+            Download Windows
+          </a>
+        </Box>
+        <br/>
       </Box>
       <SubmitField questionId={3} category="SOFTWARE"  />
     </Box>

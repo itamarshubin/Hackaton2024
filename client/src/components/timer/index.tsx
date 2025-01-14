@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Box, Typography } from '@mui/material';
 import { motion } from 'framer-motion';
 
@@ -57,10 +57,10 @@ const CountdownTimer = ({ targetDate }) => {
           >
             <motion.div
               key={`${unit}-${value}`}
-              initial={{ y: -10, opacity: 0 }}
+              initial={{ y: -20, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
-              transition={{ duration: 0.3 }}
-              style={{ fontSize: '3rem', fontWeight: 'bold', color: 'rgb(221, 197, 157)' }}
+              transition={{ duration: .5 }}
+              style={{ fontSize: '3rem', fontWeight: 'bold', color: 'rgb(233, 213, 179)' }}
             >
               {formatTime(value)}
             </motion.div>
@@ -68,7 +68,7 @@ const CountdownTimer = ({ targetDate }) => {
               variant="caption"
               sx={{
                 fontSize: '1rem',
-                color: 'rgb(168, 140, 92)',
+                color: 'rgb(192, 164, 117)',
               }}
             >
               {unit[0].toUpperCase() + unit.slice(1)}

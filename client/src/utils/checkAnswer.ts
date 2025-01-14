@@ -22,17 +22,25 @@ const answers: Record<Category, Record<number, string[]>> = {
     ],
   },
   SOFTWARE: {
-    1: ['140361d0656588c9023bd4468f6671fd8835968becaaad0abf13201ab1bda01ef8c6126440aa184974c277065ebab70c3a5c26b367fed8e930f5e903843313dd'],
+    1: [
+      '5ad1fd6777d7f67fca049248455231eea13d05f0890fdab0f95ed563dfdd70896658bb9e50591ae331f9ac87fdf66ef7aa763482e121b0075102b099ddf12c94',
+      '065943c8cb773fbced741e7ef2730338f0d9eb680da3103c3a1430825189f449fd6e4dd079bc77b146795ba6b8924a75e51a9fcd4b36401c86a301892d59ac0d'
+    ],
     2: [
       'fc4314ceda57d7671155f54ed274c7741a4cf567bd3ff0eab74a97f5a28a302e2ff3745d471f3b08623436da12a0d8c033a4d5dd40f784f6a4c5266398b14382',
       '822aabec0fb03dbf68fa3fd431d64c434bd1eb9eb127e2a13373d18df062cf210105fb9fa68e3f7899d36dd6a9ed9ae2c83414389e7a2924ec77d5ea219be4ee',
     ],
-    3: [],
-    4: []
+    3: ['4e2bbf5f8122dc11f486d3cf05029c3955222fa38cd91aee1d7d7ba9159a2b1f91f75324ea0ec819f2218ec137acf8f973887b9f8bed5b630db0ffbaf0c8755c'],
+    4: [
+      '5978060be30ef86f1366c85b5145cd5b6f9769579518aed8a4cfb18ea455ceed9a340062675e8339f700f1ce491d34e0ce84664f1f25264e1da4277cf57f410f',
+      'd466709ee578d949d73028cb1e45e1e309eb66ccca30415f6fcaae19fbf1023bd916d4a1aad5ab9b6137c957b2d660f87aec5f34782bf90798b91b45355e2d9f',
+      '13308c309a5b3aa2d162ee7d86ccedc20fb285a6f85b17859eeba2da4e8820a9d35122a9bdd067ecf0f841c84edb1f3be6de7a5fae7d37ff7665236063286d47',
+      '00183e0c80af14fe4e8dae452f93a6177560bdfb4722eb135faa2581884e09c5c4baa291a2215387e73c266563fa771286ead7e033a6564ac20199b033187ffd'
+    ]
   }
 };
 
 const checkAnswer = async (category: Category, questionId: number, answer: string): Promise<boolean> =>
-  answers[category][questionId].includes(sha512(answer).toString());
+  answers[category][questionId].includes(sha512(answer.trim()).toString());
 
 export default checkAnswer;
