@@ -4,6 +4,8 @@ import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 
 export const Question4: FC = () => {
+  const LinuxHref = new URL('../../../assets/software/q4/linux-program', import.meta.url).href;
+  const WindowsHref = new URL('../../../assets/software/q4/windows-program.exe', import.meta.url).href;
 
   return (
     <Box
@@ -19,8 +21,19 @@ export const Question4: FC = () => {
         </QuestionTypography>
         <br/>
         <QuestionTypography>
-        עליכם להריץ את התוכנה הבאה, עליה יש שרת מסוג TCP, בפורט 8080, עליכם להתחבר אליו ולשלוח לו את הסיסמה הנכונה, כשתגלו את הסיסמה הנכונה הכניסו אותה פה למטה.
+        עליכם להריץ את התוכנה הבאה, עליה יש שרת מסוג TCP, בפורט 8080, עליכם להתחבר אליו ולשלוח לו את הסיסמה הנכונה, ולקבל את הרמז הבא בלוגים של השרת.
         </QuestionTypography>
+        <br/>
+        <br/>
+        <Box display="flex" justifyContent="center" gap="30px">
+          <a href={LinuxHref} style={{ color: '#feb3ff'}} download="linux-program">
+            Download Linux
+          </a>
+          <a href={WindowsHref} style={{ color: '#feb3ff'}} download="windows-program.exe">
+            Download Windows
+          </a>
+        </Box>
+        <br/>
       </Box>
       <SubmitField questionId={4} category="SOFTWARE" />
     </Box>

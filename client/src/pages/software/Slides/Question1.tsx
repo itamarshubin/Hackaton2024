@@ -25,7 +25,7 @@ export const Question1 = () => {
           Download Math Library
         </a>
       </Box>
-      <SubmitField questionId={1} category="SOFTWARE" />
+      <SubmitField questionId={1} category="SOFTWARE" spice='DontEvenTry'/>
     </Box>
   );
 };

@@ -37,7 +37,7 @@ export const SoftwareQuestions = () => {
   return (
     <SoftwareContext.Provider value={{ progress, setProgress }}>
       <Box display="flex" flexDirection="column" alignItems="center">
-        <Box maxWidth="820px" sx={{ flexGrow: 1 }}>
+        <Box maxWidth="820px" width="94vw" sx={{ flexGrow: 1 }}>
         <Paper
           square
           elevation={0}
@@ -52,10 +52,12 @@ export const SoftwareQuestions = () => {
         </Paper>
         <Paper
           elevation={1}>
-          <Box sx={{ width: '100%', p: 2 }}>
-            {activeQuestion <= 4 ? 
+          <Box sx={{ width: '100%', p: 4 }}>
+            {activeQuestion <= 3 ? 
             <CurrentQuestion key={activeQuestion}/> : 
-            <h1>FINISHED</h1>
+            <Box p={'40px'} width={"100%"} sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Typography variant='h1' sx={{ color: '#da80ff' }}>THE END.</Typography>
+            </Box>
           }
           </Box>
         </Paper>
