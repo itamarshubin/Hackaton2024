@@ -1,39 +1,61 @@
-import { Box, Typography } from '@mui/material';
-import { FC } from 'react';
+
+import { Box } from '@mui/material';
 import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 
-export const Question3: FC = () => {
-  const LinuxHref = new URL('../../../assets/software/q3/linux-program', import.meta.url).href;
-  const WindowsHref = new URL('../../../assets/software/q3/windows-program.exe', import.meta.url).href;
+export const Question3 = () => {
+  const LibraryHref = new URL('../../../assets/software/q3/cardboard_sizes.txt', import.meta.url).href;
 
   return (
     <Box
       display="flex"
-      height="100%"
-      width="100%"
       alignItems="center"
       flexDirection="column"
-      justifyContent="space-between"
       overflow="auto"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
         <QuestionTypography>
-        כעת אתם ניצבים מול השומר של הכספת – תוכנה שמאתגרת את כוח הרצון שלכם. השומר מבקש מכם לנחש מספר מפתח בין 1 ל-1,000,000. רק מספר אחד נכון, וכל ניסיון שגוי נחשב ככישלון. אין קיצורי דרך – אתם לא מוגבלים בכמות הניסיונות, תצטרכו לנחש את מספר המפתח. הצלחה במשימה זו תוביל אתכם להודעה סודית, רמז שיכין אתכם לאתגר האחרון.       
+        הלילה הוא שלישי בלילה.
+        </QuestionTypography>
+        <QuestionTypography>
+        התחיל גשם חזק, ונפתח חור ענק בגג וטונות של מים התחיל להיכנס פנימה.
+        אז כמובן היה לבחור לקחת את הקופסאות פיצות שנשארו, כדי לסתום את החור.
+        </QuestionTypography>
+        <QuestionTypography>
+        השאלה אם יש מספיק??
         </QuestionTypography>
         <br/>
+        <QuestionTypography>
+        בקובץ המצורף יש את המידות של כל החבילות פיצות. 
+        </QuestionTypography>
+        <QuestionTypography>
+        לדוגמא, 3x5x6 מייצג קופסא שהגבוה 3, רוחב 5, ואורך 6.
+        </QuestionTypography>
+        <QuestionTypography>
+        אז השטח קרטון שמקבלים הוא:
+        </QuestionTypography>
+        <QuestionTypography>
+        2*5*6 + 2*3*5 + 2*6*3 ע״פ הנוסחה לשטח של קופסה.
+        </QuestionTypography>
         <br/>
-        <Box display="flex" justifyContent="center" gap="30px">
-          <a href={LinuxHref} style={{ color: '#feb3ff'}} download="linux-program">
-            Download Linux
-          </a>
-          <a href={WindowsHref} style={{ color: '#feb3ff'}} download="windows-program.exe">
-            Download Windows
-          </a>
-        </Box>
+        <QuestionTypography>
+        אבל יש פה עוד קאץ׳.
+        </QuestionTypography>
+        <QuestionTypography>
+בגלל שזה קופסאות פיצה, נשאר עוד קצת קרטון, שתמיד יהיה בכמות של שטח הצד הקטן ביותר.
+כלומר מה שנקבל מחבילת 3x5x6 יהיה:
+2*5*6 + 2*3*5 + 2*6*3 + 3*5.
+        </QuestionTypography>
         <br/>
+        <QuestionTypography>
+        כמה שטח קרטון יש, אם אלו המידות של כל הקופסאות פיצה שיש בישיבה?
+        </QuestionTypography>
+        <br/>
+        <a href={LibraryHref} style={{ color: '#feb3ff'}} download="cardboard_sizes.txt">
+         להורדת קובץ המידות
+        </a>
       </Box>
-      <SubmitField questionId={3} category="SOFTWARE"  />
+      <SubmitField questionId={3} category="SOFTWARE" />
     </Box>
   );
 };
