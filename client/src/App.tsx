@@ -29,7 +29,7 @@ export default function App() {
             <Route path="/home" element={<Home />} />
             <Route path="/score" element={<Scoreboard />} />
             <Route path="/ai" element={<AiQuestions />} />
-            <Route path="/software" element={<SoftwareQuestions />} />
+            <Route path="/dev" element={<SoftwareQuestions />} />
             <Route element={<ProtectedRoute />}>
               <Route path="/cyber" element={<Mail />} />
             </Route>

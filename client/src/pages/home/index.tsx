@@ -22,9 +22,9 @@ const CategoryCard = styled(Box)(_ => ({
 }));
 
 const categories = [
-  { name: "AI", gradient: ["#6A0DAD", "#8E44AD"], icon: "🧠" },
-  { name: "Cyber", gradient: ["#FF8C00", "#FFA500"], icon: "🧑‍💻" },
-  { name: "Software", gradient: ["#FF1493", "#FF69B4"], icon: "🖥️" }
+  { name: "AI", gradient: ["#6A0DAD", "#8E44AD"], icon: "🧑‍🎓" },
+  { name: "Cyber", gradient: ["#FF8C00", "#FFA500"], icon: "🕵️‍♂️" },
+  { name: "Dev", gradient: ["#FF1493", "#FF69B4"], icon: "🧑‍💻️" }
 ];
 
 const Home = () => {
@@ -36,10 +36,13 @@ const Home = () => {
         <Typography fontWeight="bold" fontSize="4rem">
           Hackathon 2025
         </Typography>
-
         <Typography>
-        Choose one of the following thrilling missions and dive into an adventure that will challenge your skills and ignite your passion for problem-solving. Whether you’re a mastermind of AI, a cyber expert, or a software wizard, there’s a mission waiting for you. Are you ready to take on the challenge?
+         Select one route and embark on an adventure that will test your skills and fuel your passion for problem-solving. Whether you’re an AI mastermind, a cyber expert, or a software wizard, a challenge awaits. Are you ready to rise to the occasion? 
+         </Typography>
+        <Typography fontSize="0.8em" width="100%" color="rgb(192, 198, 255)">
+* In AI and Dev, at any given time, two missions will be available for you to solve.
         </Typography>
+
 
 
         <Box sx={{ width: '100%', marginTop: '5vh' }}>
@@ -51,7 +54,7 @@ const Home = () => {
                 }} onClick={() => {
                   navigate(category.name);
                 }}>
-                  <Typography variant="h5" fontWeight="bold">
+                  <Typography variant="h4" fontWeight="bold">
                     {category.name}
                   </Typography>
                   <Typography
@@ -61,7 +64,7 @@ const Home = () => {
                       bottom: "-10px",
                       right: "10px",
                       fontSize: "84px",
-                      opacity: 0.2,
+                      opacity: 0.3,
                     }}
                   >
                     {category.icon}
@@ -77,7 +80,7 @@ const Home = () => {
               }} onClick={() => {
                 navigate('score');
               }}>
-                <Typography variant="h5" fontWeight="bold">
+                <Typography variant="h4" fontWeight="bold">
                   Leader Board
                 </Typography>
                 <Typography
@@ -87,7 +90,8 @@ const Home = () => {
                     bottom: "-10px",
                     right: "10px",
                     fontSize: "84px",
-                    opacity: 0.2,
+                    opacity: 0.3,
+                    letterSpacing: '-40px'
                   }}
                 >
                   🥇🥈🥉

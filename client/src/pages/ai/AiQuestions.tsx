@@ -65,14 +65,14 @@ export const AiQuestions = () => {
         </Paper>
         <MobileStepper
           variant="text"
-          steps={progress}
+          steps={Math.min(progress + 1, questionComponent.length)}
           position="static"
           activeStep={activeQuestion}
           nextButton={
             <Button
               size="small"
               onClick={handleNext}
-              disabled={activeQuestion + 1 >= progress}
+              disabled={activeQuestion >= progress}
             >
               Next
             </Button>
