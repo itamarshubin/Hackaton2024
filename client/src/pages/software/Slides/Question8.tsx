@@ -21,6 +21,10 @@ export const Question8: FC = () => {
         </QuestionTypography>
         <br/>
         <QuestionTypography>
+        בהסתכלות נכונה על זמני התגובה תוכלו לפענח את הסיסמה.
+        </QuestionTypography>
+        <br/>
+        <QuestionTypography>
         עליכם להריץ את התוכנה הבאה, עליה יש שרת מסוג TCP, בפורט 8080, עליכם להתחבר אליו ולשלוח לו את הסיסמה הנכונה, ולקבל את הרמז הבא בלוגים של השרת.
         </QuestionTypography>
         <br/>

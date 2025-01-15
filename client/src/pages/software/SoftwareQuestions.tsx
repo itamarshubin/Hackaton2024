@@ -56,7 +56,7 @@ export const SoftwareQuestions = () => {
             bgcolor: 'background.default',
           }}
         >
-          <Typography variant="h4" sx={{ margin: 'auto' }}>משימה {activeQuestion + 1} - Software</Typography>
+          <Typography variant="h4" sx={{ margin: 'auto' }}>משימה {activeQuestion + 1} - Dev</Typography>
         </Paper>
         <Paper
           elevation={1}>
@@ -71,14 +71,14 @@ export const SoftwareQuestions = () => {
         </Paper>
         <MobileStepper
           variant="text"
-          steps={progress}
+          steps={Math.min(progress + 1, questionComponent.length)}
           position="static"
           activeStep={activeQuestion}
           nextButton={
             <Button
               size="small"
               onClick={handleNext}
-              disabled={activeQuestion + 1 >= progress}
+              disabled={activeQuestion >= progress}
             >
               Next
             </Button>

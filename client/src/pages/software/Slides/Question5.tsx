@@ -21,8 +21,20 @@ export const Question5 = () => {
         האדריכל היה אובססיבי למתמטיקה וללוגיקה, והאתגר הראשון משקף את עולמו המחשבתי. בכניסה לכספת הדיגיטלית מחכה ספרייה ענקית של 1,000 ביטויים מתמטיים מקודדים. הביטויים כתובים בצורה של פונקציות (ADD, MULT, SUB) ויוצרים רצף חישובי מורכב. עליכם לנתח כל ביטוי, לחשב את ערכו, ולסכום את כל התוצאות.
         </QuestionTypography>
         <br/>
+        <QuestionTypography>
+        לדוגמה
+        </QuestionTypography>
+        <Box width="80%" border={2} mt="2rem" mb="2rem" padding='1rem' dir="ltr" fontSize="0.8em">       
+ADD(4, 5)<br/>
+MULT(MULT(1, 5), 2) <br/>
+SUB(1, ADD(5, 5)) <br/>
+        </Box>
+        <QuestionTypography>
+        הסכום הכולל הוא 10
+        </QuestionTypography>
+        <br/>
         <a href={LibraryHref} style={{ color: '#feb3ff'}} download="library.txt">
-          Download Math Library
+          להורדת הספרייה
         </a>
       </Box>
       <SubmitField questionId={5} category="SOFTWARE" spice='DontEvenTry'/>
