@@ -1,41 +1,51 @@
+
 import { Box } from '@mui/material';
-import { FC } from 'react';
 import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 
-export const Question4: FC = () => {
-  const LinuxHref = new URL('../../../assets/software/q4/linux-program', import.meta.url).href;
-  const WindowsHref = new URL('../../../assets/software/q4/windows-program.exe', import.meta.url).href;
+export const Question4 = () => {
+  const LibraryHref = new URL('../../../assets/software/q4/weights.txt', import.meta.url).href;
 
   return (
     <Box
       display="flex"
       alignItems="center"
       flexDirection="column"
-      justifyContent="space-between"
       overflow="auto"
     >
       <Box display="flex" flexDirection="column" alignItems="center">
         <QuestionTypography>
-        בלב הכספת שוכנת הבינה המלאכותית עצמה, והיא מגנה על הסוד הגדול. הבינה דורשת מכם לגלות את הסיסמה האחרונה: המורכבת מרשימה מוגדרת של תווים.  לא ניתן לפרוץ את הסיסמה בכוח כמו במשימה הקודמת, אך הבינה מגיבה בצורה ייחודית – היא בודקת תו אחרי תו את הסיסמה שהבאתם. בעזרת סבלנות, פענוח הרמז, ויכולת להתמודד עם אתגרי הזמן, תוכלו לחשוף את הסיסמה ולהגיע לסודה של הכספת.
+        אחר הרבה ניסיונות לא מוצלחות לסדר את הבית מדרש, הוחלט לשמור את המשקל של כל הספרים משום מה.
+        </QuestionTypography>
+        <QuestionTypography>
+        מצאו מדף שיכול להחזיק בדיוק 2020 גרם, תמצא את השתי ספרים שביחד ישקלו בדיוק 2020 גרם.
+        שימו בתשובה את המכפלה שלהם.
         </QuestionTypography>
         <br/>
         <QuestionTypography>
-        עליכם להריץ את התוכנה הבאה, עליה יש שרת מסוג TCP, בפורט 8080, עליכם להתחבר אליו ולשלוח לו את הסיסמה הנכונה, ולקבל את הרמז הבא בלוגים של השרת.
+        לדוגמא, מהרשימה הבאה:
+        </QuestionTypography>
+        <Box width="80%" border={2} mt="2rem" mb="2rem" padding='1rem' dir="rtl" fontSize="0.8em">       
+1721 <br/>
+979 <br/>
+366 <br/>
+299 <br/>
+675 <br/>
+1456
+
+        </Box>
+        <QuestionTypography>
+        שתי הספרים הם ה-1721 וה-299, שביחד יוצאים 2020.
+        </QuestionTypography>
+        <QuestionTypography>
+אז התשובה תהיה 1721*299=514579
         </QuestionTypography>
         <br/>
-        <br/>
-        <Box display="flex" justifyContent="center" gap="30px">
-          <a href={LinuxHref} style={{ color: '#feb3ff'}} download="linux-program">
-            Download Linux
-          </a>
-          <a href={WindowsHref} style={{ color: '#feb3ff'}} download="windows-program.exe">
-            Download Windows
-          </a>
-        </Box>
-        <br/>
+        <a href={LibraryHref} style={{ color: '#feb3ff'}} download="weights.txt">
+         להורדת קובץ המשקלים
+        </a>
       </Box>
-      <SubmitField questionId={4} category="SOFTWARE" />
+      <SubmitField questionId={4} category="SOFTWARE"/>
     </Box>
   );
 };
