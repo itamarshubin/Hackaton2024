@@ -4,7 +4,7 @@ import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 
 export const Question2 = () => {
-  const LibraryHref = new URL('../../../assets/software/q1/library.txt', import.meta.url).href;
+  const LibraryHref = new URL('../../../assets/software/q2/input.txt', import.meta.url).href;
 
   return (
     <Box
