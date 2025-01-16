@@ -10,7 +10,7 @@ const mails: Mail[] = [
   {
     from: 'UndercoverKugel',
     content:
-      'Good morning. I tried connecting to the secret service, at 91.223.106.183 on port 19000 like you said. I got a number, and sent the service back the hour*number, but it didnt work. Any idea why?',
+      'Good morning. I tried connecting to the secret service, at 91.223.106.183 on port 19000 like you said. I got a number, and sent the service back the hour*number (in UTC time), but it didnt work. Any idea why?',
     subject: 'Cant connect to secret service',
   },
   {
