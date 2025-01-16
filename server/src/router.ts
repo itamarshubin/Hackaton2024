@@ -1,5 +1,6 @@
 import { Router } from 'express';
-import { login } from './controller';
+import { getManual, login } from './controller';
 
 export const loginRouter = Router();
-loginRouter.post('/login', login);
+loginRouter.post('/api/login', login);
+loginRouter.get('/api/manual_A0B1C2P00.pdf', getManual);

@@ -48,7 +48,7 @@ const Home = () => {
         <Box sx={{ width: '100%', marginTop: '5vh' }}>
           <Grid container spacing={2}>
             {categories.map((category) => (
-              <Grid size={{ xs: 12, md: 4}}>
+              <Grid size={{ xs: 12, md: 4}} key={category.name}>
                 <CategoryCard sx={{
                   background: `linear-gradient(to right, ${category.gradient[0]}, ${category.gradient[1]})`
                 }} onClick={() => {

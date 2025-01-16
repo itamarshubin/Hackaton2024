@@ -4,6 +4,8 @@ import QuestionTypography from '../components/QuestionTypography';
 import SubmitField from '../components/SubmitField';
 
 export const Question1 = () => {
+  const decoderHref = new URL('../../../assets/q1/decoder.pth', import.meta.url).href;
+
   return (
     <Box
       display="flex"
@@ -25,7 +27,8 @@ export const Question1 = () => {
         <QuestionTypography>על המסך מופיעים הדברים הבאים:</QuestionTypography>
         <br/>
         <QuestionTypography style={{ paddingRight: '2rem', color: '#da80ff' }}>הקישור: https://en.wikipedia.org/wiki/MNIST_database</QuestionTypography>
-        <QuestionTypography style={{ paddingRight: '2rem', color: '#da80ff' }}>קובץ בשם: decoder.pth.</QuestionTypography>
+        <Typography dir="rtl" width='100%' style={{ paddingRight: '2rem', color: '#da80ff' }}>קובץ בשם: <a href={decoderHref} style={{ color: '#feb3ff'}} download="decoder.pth">decoder.pth.</a></Typography>
+        
         <br/>
         <QuestionTypography>
           לפתע אתם שמים לב כי על צידו של המסך נראה תלוי פתק קטן, אתם מתקרבים ורואים אותו בבירור:

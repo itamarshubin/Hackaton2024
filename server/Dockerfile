@@ -1,4 +1,4 @@
-FROM node:23-alpine as app
+FROM node:23-alpine AS app
 
 WORKDIR /app
 
@@ -19,5 +19,6 @@ ENV LOGIN_PASSWORD=$loginPassword
 WORKDIR /
 
 COPY --from=app ./app/dist/final.js .
+COPY --from=app ./app/files files
 
 ENTRYPOINT ["node", "final.js"]

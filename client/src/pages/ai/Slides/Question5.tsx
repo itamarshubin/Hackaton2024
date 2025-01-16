@@ -25,12 +25,6 @@ export const Question5: FC = () => {
           משם אתם כבר תדעו מה לעשות.
         </QuestionTypography>
         <br/>
-
-        <QuestionTypography>
-          מעבר לתחושה הקריפית שמעביר בכם החדר פתאום הדלת נסגרת! זאת מלכודת! על הדלת מופיע מנעול ועליו קוד, בלית ברירה
-          אתם חוזרים לבהות בחדר ובמיוחד ב2 התמונות של הרב גרוס, אולי המשם תבוא הישועה...
-        </QuestionTypography>
-        <br/>
         <br/>
         <QuestionTypography color="#da80ff">
           קובץ להורדה
